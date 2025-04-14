@@ -52,6 +52,13 @@
     <tag>HEAD</tag>
     <url>https://github.com/${github.owner}/${github.repo}</url>
   </scm>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/${github.owner}/${github.repo}</url>
+    </repository>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>

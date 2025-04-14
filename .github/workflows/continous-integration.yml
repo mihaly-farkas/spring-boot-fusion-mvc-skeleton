@@ -1,0 +1,42 @@
+name: "Continuous Integration"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - release/*
+    paths-ignore:
+      - .editorconfig
+      - .gitignore
+      - CHANGELOG.md
+      - LICENSE
+      - README.md
+concurrency:
+  group: ${{ github.repository }}-continuous-integration-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  continuous-integration:
+    name: "Continuous Integration"
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: "Setup Java"
+        uses: actions/setup-java@v4
+        with:
+          java-version: 23
+          distribution: corretto
+          cache: maven
+          cache-dependency-path: pom.xml
+      - name: "Maven Build"
+        run: |
+          # Bash script
+          chmod +x ./mvnw
+          ./mvnw --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
