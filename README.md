@@ -40,6 +40,12 @@ focus purely on implementing functionality.
 ./mvnw versions:update-properties
 ```
 
+#### Build the application `.jar` and install it in the local Maven repository
+
+```bash
+./mvnw clean install
+```
+
 ## License
 
 This project is licensed under the [Apache 2.0 License](LICENSE).

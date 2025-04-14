@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -14,11 +16,12 @@
   <name>Spring Boot Fusion MVC Skeleton</name>
   <description>A skeleton application that puts together all the boilerplate needed to create a Spring Boot (micro) service</description>
   <properties>
-    <!-- Build properties -->
-    <java.version>24</java.version>
+    <!-- GitHub properties -->
+    <github.owner>mihaly-farkas</github.owner>
+    <github.repo>${artifactId}</github.repo>
+    <!-- Versions of fundamental dependencies -->
+    <java.version>23</java.version>
     <maven.version>3.3.9</maven.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
     <!-- Maven plugins -->
     <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
@@ -26,24 +29,28 @@
     <!-- Mojo Codehaus plugins -->
     <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
   </properties>
-  <url>https://github.com/mihaly-farkas/spring-boot-fusion-mvc-skeleton</url>
+  <url>https://github.com/${github.owner}/${github.repo}</url>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
-      <url>https://github.com/mihaly-farkas/spring-boot-fusion-mvc-skeleton?tab=License-1-ov-file</url>
+      <url>https://github.com/${github.owner}/${github.repo}?tab=License-1-ov-file</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
   <developers>
     <developer>
       <name>Mihaly Farkas</name>
+      <timezone>Europe/Budapest</timezone>
+      <properties>
+        <picUrl>https://avatars.githubusercontent.com/u/194117456</picUrl>
+      </properties>
     </developer>
   </developers>
   <scm>
-    <connection>scm:git:https://github.com/mihaly-farkas/spring-boot-fusion-mvc-skeleton.git</connection>
-    <developerConnection>scm:git:git@github.com:mihaly-farkas/spring-boot-fusion-mvc-skeleton.git</developerConnection>
+    <connection>scm:git:https://github.com/${github.owner}/${github.repo}.git</connection>
+    <developerConnection>scm:git:git@github.com:${github.owner}/${github.repo}.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://github.com/mihaly-farkas/spring-boot-fusion-mvc-skeleton</url>
+    <url>https://github.com/${github.owner}/${github.repo}</url>
   </scm>
   <dependencies>
     <dependency>
